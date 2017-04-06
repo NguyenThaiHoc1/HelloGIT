@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/NguyenThaiHoc1/HelloGIT/issues"
   },
-  "homepage": "https://github.com/NguyenThaiHoc1/HelloGIT#readme"
+  "homepage": "https://github.com/NguyenThaiHoc1/HelloGIT#readme",
+  "devDependencies": {
+    "body-parser": "^1.17.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "pg": "^6.1.5"
+  }
 }
