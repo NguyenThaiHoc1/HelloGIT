@@ -1,8 +1,103 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Register</title>
-  </head>
-  <body>
-    This is Register Page
-  </body>
+   <head>
+      <title>HOME</title>
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <meta name=”viewport” content=”width=device-width, initial-scale=1″>
+      <link rel="stylesheet" type="text/css" href="css/supportSelect.css">
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+   </head>
+   <body class="bgimg-1">
+      <div class="wrapper" id="main">
+         <div class="headers">
+            <nav class="nav navbar-default navbar-fixed-top" style="margin-bottom: 0!important;">
+               <div class="container">
+                  <!-- Tao ra 1 button duoc hien thi khi -->
+                  <div class="navbar-header">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-a" aria-expanded="false">
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     </button>
+                     <!-- Nơi chứa hình ảnh logo của trang -->
+                     <a class="navbar-brand1" href="#" id="logo"><img src="img/logo.png" alt=""/></a>
+                  </div>
+                  <div class="collapse navbar-collapse" id="navbar-collapse-a">
+                     <ul class="nav navbar-nav">
+                        <li class="active">
+                           <a href="./index2.html">Home<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li>
+                           <a href="./html/Albums.html">Albums</a>
+                        </li>
+                        <li>
+                           <a href="./html/About.html" >About</a>
+                        </li>
+                        <li>
+                           <a href="./html/blog.html">Blogs</a>
+                        </li>
+                     </ul>
+                     <!-- Link to Pages -->
+                     <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Your Account
+                           <span class="caret"></span>
+                           </a>
+                           <ul class="dropdown-menu">
+                              <li><a href="#">Action</a></li>
+                              <li><a href="#">Another action</a></li>
+                              <li><a href="#">Something else here</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li><a href="#">Separated link</a></li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </div>
+                  <!--End bao dong  -->
+               </div>
+               <!-- End container -->
+            </nav>
+            <!-- End Navigation bar-->
+            <div id="background">
+               <img src="./img/rsz_logo3.png" class="stretch" alt="" />
+               <div class="info">
+                  <p class="page-header">NEW SUBMIT</p>
+               </div>
+            </div>
+         </div>
+         <!-- End Header-->
+         <div class="body-web">
+
+         </div>
+         <!--End: body-web Phần thân của trang web "web được chia làm 3 phần -->
+         <div class="panel-footer">
+            <div class="container">
+               <hr>
+               <div class="text-center center-block">
+                  <p class="txt-railway">- Team Guilty Crown -</p>
+                  <br />
+                  <a href=""><i id="fb" class="fa fa-facebook-square fa-2x social"></i></a>
+                  <a href=""><i id="tw" class="fa fa-twitter-square fa-2x social"></i></a>
+                  <a href=""><i id="gp" class="fa fa-google-plus-square fa-2x social"></i></a>
+                  <a href=""><i id="gmail" class="fa fa-envelope-square fa-2x social"></i></a>
+                  <br />
+                  <p> © 2017 GC<p>
+               </div>
+               <hr>
+            </div>
+         </div>
+         <!-- End Footer -->
+      </div>
+      <!-- End Warpper-->
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script type="text/javascript">
+         $('ul.nav li.dropdown').hover(function() {
+           $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+         }, function() {
+           $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+         });
+      </script>
+   </body>
 </html>
