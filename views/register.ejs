@@ -61,13 +61,35 @@
             <div id="background">
                <img src="./img/rsz_logo3.png" class="stretch" alt="" />
                <div class="info">
-                  <p class="page-header">NEW SUBMIT</p>
+                  <p class="page-header"></p>
                </div>
             </div>
          </div>
          <!-- End Header-->
          <div class="body-web">
-
+           <div class="container" style="width: 45%; text-align: center">
+             <div class="panel panel-default">
+               <div class="panel-heading">
+                 <h4>Log In</h4>
+              </div>
+              <div class="panel-body">
+                <form action="http://localhost:8080/register" method="post">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Enter Your Username" name="username">
+                  </div><!-- End Text Username -->
+                  <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Enter Your Password" name="password">
+                  </div><!-- End Text Password -->
+                  <div class="form-group">
+                  </div><!-- Login by Facebook , Google Mail, ... -->
+                  <div class="form-group">
+                    <button class="btn btn-success" type="submit">Log In</button>
+                    <a href="#" class="btn btn-inverse" role="button">Register</a>
+                  </div><!-- Button type<Login> , type<Register> -->
+                </form>
+              </div>
+             </div>
+           </div>
          </div>
          <!--End: body-web Phần thân của trang web "web được chia làm 3 phần -->
          <div class="panel-footer">
