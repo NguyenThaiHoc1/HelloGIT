@@ -43,11 +43,17 @@ app.get("/Albums", function (req, res) {
 
 // Register Page
 app.get("/register", function (req, res) {
-  res.end("404 not Found Page");
+  res.render("RegisterPage");
+});
+app.post("/register", function (req, res) {
+  // process register ...
 });
 // login page
 app.get("/login", function (req, res) {
   res.render("register");
+});
+app.post("/login", function (req, res) {
+  // process login ...
 });
 
 app.listen(8080, function() {
