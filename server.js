@@ -35,9 +35,17 @@ app.get("/Albums", function (req, res) {
   res.render("Albums");
 });
   // Sub-Album (chua the xu ly duoc de sau vay)
-
+  app.get("/Albums/:id" , function () {
+    // chuyen vao 1 cai id de no co the vong lap tao ra
+    console.log("Here: " + id);
+    res.render("SubAlbum");
+  });
 // Register Page
 app.get("/register", function (req, res) {
+  res.end("404 not Found Page");
+});
+// login page
+app.get("/login", function (req, res) {
   res.render("register");
 });
 
