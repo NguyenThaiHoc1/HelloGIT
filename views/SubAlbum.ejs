@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ALBUM1</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <meta name=”viewport” content=”width=device-width, initial-scale=1″>
+    <link rel="stylesheet" type="text/css" href="css/supportSelect.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style type="text/css">
+        /* Rieng cho Albums*/
+        .thumbnail >img {
+            max-width: 100%;
+        }
+        .img-circle {
+            width: 30px;
+            height: 30px;
+        }
+        .textAlginThumail-Albums {
+            text-align: center;
+        }
+        .textAlginThumail-Albums .viewS {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        #row-list-image .column-list-image .hoverLink:hover{
+            -moz-transition: all, ease-in-out 0.5s;
+              -o-transition: all, ease-in-out 0.5s;
+              -webkit-transition: all, ease-in-out 0.5s;
+              transition: all, ease-in-out 0.5s;
+            background-color: #A9A9A9;
+            opacity: 1;
+            color: white;
+            cursor: zoom-in;
+            display: block;
+        }
+
+
+    </style>
+</head>
+
+<body class="bgimg-1">
+    <div class="panel panel-default" id="leftmenu">
+        <div class="panel-heading">
+            Albums
+        </div>
+        <ul class="nav navbar-default" style="padding: 0 5%;">
+            <li><a href="#">Album 1</a>
+            </li>
+            <li><a href="#">Album 2</a>
+            </li>
+            <li><a href="#">Album 3</a>
+            </li>
+        </ul>
+    </div>
+    <button class="btn btn-inverse" id="buttonstart" value="0">
+        <span class="glyphicon glyphicon-star"></span>
+    </button>
+
+    <!-- tao 1 cai leftmenu ao  -->
+    <div class="wrapper" id="main">
+        <div class="headers">
+            <nav class="nav navbar-default navbar-fixed-top" style="margin-bottom: 0!important;">
+                <div class="container">
+                    <!-- Tao ra 1 button duoc hien thi khi -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-a" aria-expanded="false">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <!-- Nơi chứa hình ảnh logo của trang -->
+                        <a class="navbar-brand1" href="#" id="logo"><img src="../../img/logo.png" alt="" />
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbar-collapse-a">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="../../index2.html">Home</a>
+                            </li>
+                            <li class="active">
+                                <a href="./../Albums.html">Albums<span class="sr-only">(current)</span></a>
+                            </li>
+                            <li>
+                                <a href="./../About.html">About</a>
+                            </li>
+                            <li>
+                                <a href="./../blog.html">Blogs</a>
+                            </li>
+                        </ul>
+                        <!-- Link to Pages -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Your Account
+                           <span class="caret"></span>
+                           </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a>
+                                    </li>
+                                    <li><a href="#">Another action</a>
+                                    </li>
+                                    <li><a href="#">Something else here</a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--End bao dong  -->
+                </div>
+                <!-- End container -->
+            </nav>
+            <!-- End Navigation bar-->
+            <div id="background">
+                <img src="../../img/rsz_logo3.png" class="stretch" alt="" />
+                <div class="info">
+                    <p class="page-header">ALBUMS</p>
+                </div>
+            </div>
+        </div>
+        <!-- End Header-->
+        <div class="body-web">
+            <div class="container">
+                <div class="breadcrumbs-s">
+                    <ol class="breadcrumb">
+                        <li><a href="../../index2.html">Home</a>
+                        </li>
+                        <li><a href="../Albums.html">Albums</a>
+                        </li>
+                        <li class="active"><a class="colorCrums" href="#">Album 1</a>
+                        </li>
+                    </ol>
+                </div>
+                <!-- End BreadCrumbs-->
+
+                <div>
+                    <div class="row">
+                        <div class="col-md-3 hidden-leftmenu">
+
+                          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                              <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <h4 class="panel-title">
+                                             Albums <span class="caret"></span>
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                  <div class="panel-body">
+                                     <div class="left-navigation panel panel-default">
+                                     <a role="button" data-toggle="collapse" data-parent="#collapseOne" href="#listAlbums" aria-expanded="true" aria-controls="collapseOne">
+                                      <div class="panel-heading">
+                                        ALL Albums
+                                      </div>
+                                      </a>
+                                      <ul class="nav navbar-default" style="padding: 0 5%;" id="listAlbums">
+                                                <li class="active"><a class="colorCrums" href="#">Album 1</a></li>
+                                                <li><a href="#">Album 2</a></li>
+                                                <li><a href="#">Album 3</a></li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                         </div>
+
+                        </div>
+                        <div class="col-md-9">
+
+                          <div class="row" id="row-list-image">
+                              <div class="col-sm-4 col-md-4 column-list-image">
+                                <a href="#" class="thumbnail hoverLink">
+                                  <img src="../../img/BG.jpg" alt="...">
+                                  <div class="caption textAlginThumail-Albums">
+                                    <h5>Thumbnail label</h5>
+                                    <p>toi la nguyen thai hoc can duoc chu y hon ve ban sac dan toc</p>
+                                  </div>
+                                </a>
+
+                                <a href="#" class="thumbnail hoverLink" id="1">
+                                  <img src="../../img/background.jpg" alt="...">
+                                  <div class="caption textAlginThumail-Albums">
+
+                                        <div class="viewS">
+                                            <img src="../../img/bg.jpg" alt="..." class="img-circle" /> Ho Thao Hien
+
+                                        </div>
+                                        <p>Sad Piano</p>
+                                        <div class="viewS">
+                                            <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> View: 160</p>
+                                        </div>
+
+                                  </div>
+                                </a>
+                                <a href="#" class="thumbnail hoverLink">
+                                  <img src="../../img/logo1.jpg" alt="...">
+                                  <div class="caption textAlginThumail-Albums">
+                                    <h5>Thumbnail label</h5>
+                                    <p>...</p>
+
+                                  </div>
+                                </a>
+                              </div> <!-- End Column -->
+                              <div class="col-sm-4 col-md-4 column-list-image">
+                                <a href="#" class="thumbnail hoverLink">
+                                  <img src="../../img/logo1.jpg" alt="...">
+                                  <div class="caption">
+                                    <h5>Thumbnail label</h5>
+                                    <p>toi la nguyen thai hoc can duoc chu y hon ve ban sac dan toc</p>
+                                    <p>sdasd sd sad as d sd s d sd s d s d sad as dsa da sd s d s </p>
+                                  </div>
+                                </a>
+                                <a href="#" class="thumbnail hoverLink">
+                                  <img src="../../img/background.jpg" alt="...">
+                                  <div class="caption textAlginThumail-Albums">
+                                    <h5>Thumbnail label</h5>
+                                    <p>...</p>
+
+                                  </div>
+                                </a>
+                                <a href="#" class="thumbnail hoverLink">
+                                  <img src="../../img/BG.jpg" alt="...">
+                                  <div class="caption textAlginThumail-Albums">
+                                    <h5>Thumbnail label</h5>
+                                    <p>...</p>
+
+                                  </div>
+                                </a>
+                              </div> <!-- End Column -->
+                              <div class="col-sm-4 col-md-4 column-list-image">
+                                <a href="#" class="thumbnail hoverLink">
+                                  <img src="../../img/logo1.jpg" alt="...">
+                                  <div class="caption textAlginThumail-Albums">
+                                    <h5>Thumbnail label</h5>
+                                    <p>...</p>
+
+                                  </div>
+                                </a>
+                                <a href="#" class="thumbnail hoverLink">
+                                  <img src="../../img/BG.jpg" alt="...">
+                                  <div class="caption textAlginThumail-Albums">
+                                    <h5>Thumbnail label</h5>
+                                    <p>...</p>
+
+                                  </div>
+                                </a>
+                                <a href="#" class="thumbnail hoverLink">
+                                  <img src="../../img/background.jpg" alt="...">
+                                  <div class="caption textAlginThumail-Albums">
+                                    <h5>Thumbnail label</h5>
+                                    <p>...</p>
+
+                                  </div>
+                                </a>
+                              </div> <!-- End Column -->
+
+                          </div><!-- End Row-->
+                        </div>
+                        <!-- End column-->
+                    </div>
+                    <!-- End row -->
+                </div>
+                <!-- via ngoai cua End Row -->
+            </div>
+        </div>
+        <!--End: body-web Phần thân của trang web "web được chia làm 3 phần -->
+        <div class="panel-footer">
+            <div class="container">
+                <hr>
+                <div class="text-center center-block">
+                    <p class="txt-railway">- Team Guilty Crown -</p>
+                    <br />
+                    <a href=""><i id="fb" class="fa fa-facebook-square fa-2x social"></i></a>
+                    <a href=""><i id="tw" class="fa fa-twitter-square fa-2x social"></i></a>
+                    <a href=""><i id="gp" class="fa fa-google-plus-square fa-2x social"></i></a>
+                    <a href=""><i id="gmail" class="fa fa-envelope-square fa-2x social"></i></a>
+                    <br />
+                    <p> © 2017 GC
+                        <p>
+                </div>
+                <hr>
+            </div>
+        </div>
+        <!-- End Footer -->
+    </div>
+    <!-- End Warpper-->
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $('ul.nav li.dropdown').hover(function() {
+            $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+        }, function() {
+            $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+        });
+
+
+        $("#buttonstart").click(function() {
+            if ($(this).val() == "0") {
+                $(this).animate({
+                    left: 210
+                }, 300); //1
+                $("#leftmenu").animate({
+                    left: -10
+                }, 300); //1000
+                $(this).val("1");
+            } else {
+                $(this).animate({
+                    left: 0
+                }, 300);
+                $("#leftmenu").animate({
+                    left: -220
+                }, 300);
+                $(this).val("0");
+            }
+        });
+    </script>
+</body>
+
+</html>
