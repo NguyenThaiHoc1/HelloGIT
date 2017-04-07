@@ -1,0 +1,307 @@
+@import "http://designmodo.github.io/Flat-UI/dist/css/flat-ui.min.css";
+/* --------------------------------------
+   BackGround 
+   
+
+   -------------------------------------- */
+  .container .grindSingle .row {
+    
+  }
+  .container .grindSingle .default-thumnail {
+   
+  }
+ .bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  opacity: 0.65;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("../img/BG.png");
+  height: 100%;
+}
+
+
+/* --------------------------------------
+   All 
+   -------------------------------------- */
+.info {
+
+}
+.page-header {
+    padding: 54px 0 49px;
+    margin-left: -20px;
+    margin-right: -20px;
+    font-size: 32px;
+    line-height: 42px;
+    padding: 0;
+}
+.body-web #bar-resize .btn {
+  -moz-transition: all, ease-in-out 0.5s;
+  -o-transition: all, ease-in-out 0.5s;
+  -webkit-transition: all, ease-in-out 0.5s;
+  transition: all, ease-in-out 0.5s;
+  cursor: pointer;
+}
+
+.body-web .btn, .btn:focus {
+  color: white;
+}
+.body-web .btn-success:hover {
+  background: #0a8cfd;
+}
+.body-web .btn-inverse:hover {
+  background: #71c1d8;
+}
+.body-web .btn-inverse {
+  background: #363636;
+}
+
+.grindSingle .thumbnail .algintext {
+  text-align: center;
+}
+/* --------------------------------------
+   Header
+   -------------------------------------- */
+
+#background {
+    width: 50%; 
+    height: 100%; 
+    text-align: center;
+    margin: 0 auto;
+}
+
+.stretch {
+    width:100%;
+    height:100%;
+}
+
+/* --------------------------------------
+   Navbar
+   -------------------------------------- */
+a {
+   -moz-transition: all, ease-in-out 0.5s;
+  -o-transition: all, ease-in-out 0.5s;
+  -webkit-transition: all, ease-in-out 0.5s;
+  transition: all, ease-in-out 0.5s;
+}
+#navbar-collapse-a {
+
+}
+#background {
+  position: relative;
+  padding-top: 48px;
+  padding-bottom: 30px;
+}
+.container #logo img {
+  width: 100%;
+  height: 100%;
+}
+.navbar-brand1 {
+  display: block;
+  max-width: 80px;
+  height: 50px;
+  padding: 5px 9px;
+  margin: 0 auto;
+  text-align: center;
+}
+.navbar {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+#iconSearch {
+  color: white;
+  background-color: black;
+}
+@media screen and (min-width: 992px) { /* duoi 922 thi no se la nhu vay*/
+  .navbar-brand1 {
+    float: left;
+    margin-right: 5px;
+    margin-left: -15px;
+  }
+}
+@media screen and (min-width: 768px) { /* duoi 922 thi no se la nhu vay*/
+  #background {
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+}
+@media screen and (max-width: 992px){ /* duoi 992 thi no se la nhu vay*/
+  .navbar-header {
+      float: none;
+  }
+  .navbar-left,.navbar-right {
+      float: none !important;
+  }
+  .navbar-toggle {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+  }
+  .navbar-collapse {
+      border-top: 1px solid transparent;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .navbar-fixed-top {
+      top: 0;
+      border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+      display: none!important;
+  }
+  .navbar-nav {
+      float: none!important;
+      margin-top: 7.5px;
+  }
+  .navbar-nav>li {
+      float: none;
+  }
+  .navbar-nav>li>a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+  .collapse.in{
+      display:block !important;
+  }
+}
+
+/* --------------------------------------
+   Body web
+   -------------------------------------- */
+#tofour-list: {
+
+}
+#toList:hover, #tofour-list:hover {
+  -moz-transform: scale(2);
+  -webkit-transform: scale(2);
+  -o-transform: scale(2);
+  -ms-transform: scale(2);
+  transform: scale(2);
+}
+.parentimage { /*Cai nay la hieu hung*/
+  /*-webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;*/
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+} 
+.parentimage:hover {
+  /*-moz-transform: scale(2);
+  -webkit-transform: scale(2);
+  -o-transform: scale(2);
+  -ms-transform: scale(2);
+  transform: scale(2);*/
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+} 
+#bar-resize {
+  overflow: hidden;
+}
+#bar-resize button {
+  border: none;
+  
+  color: black;
+  background-color: white;
+}
+#bar-resize button:hover {
+  background-color: #eee;
+}
+#bar-resize {
+  margin-bottom: 20px;
+}
+
+.grindSingle {
+ 
+
+}
+
+
+.img-circle {
+  width: 40px;
+  height: 30px;
+}
+
+@media (max-width: 767px) {
+    .hidden-xs {
+      display: none!important;
+    }
+}
+/* --------------------------------------
+   Social Media
+   -------------------------------------- */
+ #fb:hover {
+     color: #3B5998;
+ }
+ #tw:hover {
+     color: #4099FF;
+ }
+ #gp:hover {
+     color: #d34836;
+ }
+ #gmail:hover {
+     color: #f39c12;
+ }
+
+
+
+/* --------------------------------------
+   Left Menu
+   -------------------------------------- */
+/* screw writing importants and shit, just stick it in max width since these classes are not shared between sizes */
+
+ #leftmenu {
+          display: none;
+          position: fixed;
+          left: -220px;
+          top: 20%; 
+          width: 220px;
+          z-index: 9999;
+    }
+
+    @media screen and (max-width: 767px){
+        #buttonstart {
+          display: block!important;
+        }
+        #leftmenu {
+          display: block;
+        }
+        #leftmenuno {
+          display: none;
+        }
+    }
+
+    #buttonstart {
+        position: fixed;
+        left: 0px;
+        top: 20%;
+        display: none;
+        z-index: 9999;
+    }
+/* --------------------------------------
+  BreadCrums
+   -------------------------------------- */
+.colorCrums {
+  color: black;
+}
+@media screen and (max-width: 768px){
+  .hidden-leftmenu {
+    display: none;
+  }
+}
+
+/* --------------------------------------
+  Footter
+   -------------------------------------- */
+.panel-footer {
+  margin-top: 40px;
+  position: relative;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+}
