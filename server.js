@@ -17,24 +17,24 @@ var urlencodeParser = bodyparser.urlencoded({extended:false});
 
 // Home Page
 app.get("/", function (req, res) {
-
+  res.render("Home");
 });
 
 // About Page
 app.get("/About", function (req, res) {
-
+  res.render("About");
 });
 
 // Blogs Page
 app.get("/Blogs", function (req, res) {
-
+  res.render("Blog");
 });
 
 // Albums Page
 app.get("/Albums", function (req, res) {
-
+  res.render("Albums");
 });
-  // Sub-Album
+  // Sub-Album (chua the xu ly duoc de sau vay)
 
 // Register Page
 app.get("/register", function (req, res) {
