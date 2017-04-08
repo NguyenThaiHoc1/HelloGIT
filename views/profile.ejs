@@ -70,35 +70,17 @@
            <div class="container" style="width: 45%; text-align: center">
              <div class="panel panel-default">
                <div class="panel-heading">
-                 <h4>Register</h4>
+                 <h4>Profile</h4>
               </div>
               <div class="panel-body">
                 <!-- don gian cho nay hieu la neu co cau lenh nao truyen qua thi co nghia no da co loi va can duoc sua chua-->
-                <% if (message.length > 0) { %>
-                    <div class="alert alert-danger"><%= message %></div>
-                <% } %>
-                <!--Register Form to server -->
-                <form action="http://localhost:8080/register" method="post">
-                  <div class="form-group">
-                    <label for="UserN">Username</label>
-                    <input id="UserN" type="text" class="form-control" placeholder="Enter Your Username" name="username">
-                  </div><!-- End Text Username -->
-                  <div class="form-group">
-                    <label for="PWord">Password</label>
-                    <input id="PWord" type="password" class="form-control" placeholder="Enter Your Password" name="password">
-                  </div><!-- End Text Password -->
-                  <div class="form-group">
-                    <label for="EMAIL">Email</label>
-                    <input id="EMAIL" type="email" class="form-control" placeholder="Enter Your Email" name="email">
-                  </div>
-                  <div>
-                    <label for="Avartar">Avartar</label>
-                    <input id="Avartar" type="file" accept="image/*" class="form-control"  name="picAvartar">
-                  </div>
-                  <div class="form-group" style="margin-top: 20px;">
-                    <button class="btn btn-success" type="submit">OK</button>
-                  </div><!-- Button type<Login> , type<Register> -->
-                </form>
+                <strong>id</strong>: <%= user._id %><br>
+                <strong>username</strong>: <%= user.local.username %><br>
+                <strong>password</strong>: <%= user.local.password %><br>
+                <strong>email</strong>: <%= user.local.email %><br>
+                <strong>Avatar</strong><br>
+
+                 <img src= "<%= user.local.avatar %>" alt="">
               </div>
              </div>
            </div>
