@@ -6,14 +6,16 @@ var app = express();
 var fs = require("fs");
 // setting a ServerFile Project
   // . setting public include: css, font, js
-app.use(express.static(__dirname + "/public"));
+  app.use(express.static(__dirname + "/public"));
   // . setting Template engine
 app.set("view engine", "ejs");
 app.set("views", "./views");
   // . setting body-parser
-var urlencodeParser = bodyparser.urlencoded({extended:false});
+var urlencodeParser = bodyparser.urlencoded({extended:true});
   // . setting PostGres
   // comming soon
+// midderWare
+  app.use(urlencodeParser);
 
 // Home Page
 app.get("/", function (req, res) {
@@ -25,10 +27,17 @@ app.get("/About", function (req, res) {
   res.render("About");
 });
 
+
+
 // Blogs Page
 app.get("/Blogs", function (req, res) {
   res.render("Blog");
 });
+
+
+
+
+
 
 // Albums Page
 app.get("/Albums", function (req, res) {
@@ -41,13 +50,20 @@ app.get("/Albums", function (req, res) {
   });
 
 
+
+
 // Register Page
 app.get("/register", function (req, res) {
   res.render("RegisterPage");
 });
 app.post("/register", function (req, res) {
-  // process register ...
+  res.json(req.body);
 });
+
+
+
+
+
 // login page
 app.get("/login", function (req, res) {
   res.render("register");
