@@ -73,6 +73,11 @@
                  <h4>Log In</h4>
               </div>
               <div class="panel-body">
+                <% if(loginmessage.length > 0) { %>
+                    <div class="alert alert-danger">
+                      <%= loginmessage %>
+                    </div>
+                <% } %>
                 <form action="http://localhost:8080/login" method="post">
                   <div class="form-group">
                     <input type="text" class="form-control" placeholder="Enter Your Username" name="username">

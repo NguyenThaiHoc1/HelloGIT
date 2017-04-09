@@ -33,12 +33,12 @@ var userSchema = mongoose.Schema({
 });
 
 // methods ======================
-// generating a hash
+// generating a hash : phat sinh password cho 1 doi tuong
 userSchema.methods.generateHash = function(password) {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
 };
 
-// checking if password is valid
+// checking if password is valid kiem tra password xem co dung hay khong ?
 userSchema.methods.validPassword = function(password) {
     return bcrypt.compareSync(password, this.local.password);
 };

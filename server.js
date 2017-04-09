@@ -45,6 +45,21 @@ function isLoggedIn(req, res, next) {
     // if they aren't redirect them to the home page
     res.redirect('/login');
 }
+// giai thich 1 chut ve ham nay neu thang do da dang nhap vao he thong va chua
+// thoat ra thi ta chuyen huong cho no vao trang profile
+//req.isUnauthenticated()
+function isLoggedLong(req, res, next) {
+
+    // if user is authenticated in the session, carry on
+    // noi ra no ra kiem tra xem thang do co trong session hay chua
+    // neu da co thi se chuyen huong
+    // neu chua co thi se tiep tuc cac middleware
+    if (req.isUnauthenticated())
+        return next();
+
+    // if they aren't redirect them to the home page
+    res.redirect('/profile');
+}
 
 
 
@@ -90,17 +105,19 @@ app.get("/register", function (req, res) {
 });
 app.post("/register", passport.authenticate("register", {
   successRedirect : '/profile', // chuyen huong qua trang home hay trang profile
-  failureRedirect : '/register',
+  failureRedirect : '/register', // that bai khi dang ky thi se chuyen ve trang dang ky
   failureFlash : true // allow flash messages
 }));
 
 // login page
-app.get("/login", function (req, res) {
-  res.render("register");
+app.get("/login", isLoggedLong, function (req, res) {
+  res.render("register", { loginmessage: req.flash('loginMessage') });
 });
-app.post("/login", function (req, res) {
-  // process login ...
-});
+app.post("/login", passport.authenticate("login",{
+    successRedirect: "/profile",
+    failureRedirect: "/login",
+    failureFlash: true
+}));
 
 // profile Page
 app.get("/profile",isLoggedIn, function (req, res) {
@@ -109,7 +126,10 @@ app.get("/profile",isLoggedIn, function (req, res) {
   });
 });
 // Log Out
-
+app.get('/logout', function(req, res) {
+    req.logout();
+    res.redirect('/');
+});
 
 
 app.listen(8080, function() {

@@ -10,7 +10,7 @@ module.exports = function (passport) {
 
     // xet' tinh' tuan tu cua 1 user in the session
     passport.serializeUser(function (user, done) {
-      done(null, user.id);
+      done(null, user._id);
     });
     // loai bo 1 user ra khoi session hien co
     passport.deserializeUser(function (id, done) {
@@ -52,6 +52,28 @@ module.exports = function (passport) {
                     return done(null, nUser);
                 });
               }
+          });
+        });
+    }));
+    // passport-login
+    passport.use("login", new LocalStrategy({
+        usernameField: 'username',
+        passwordField: 'password',
+        passReqToCallback: true
+    }, function (req, username, password, done) {
+        process.nextTick(function () {
+          // tim kiem username tuong thich
+          user.findOne({'local.username':username}, function (err, preuser) {
+            if(err)
+              return done(err);
+            if(!preuser) // kiem tra xem co user hay ko
+             {
+               return done(null, false, req.flash("loginMessage", "Error : User Not Found" ));
+             }
+            if(!preuser.validPassword(password)) // kiem tra password hien tai co khop voi password da duoc ma hoa hay ko
+              return done(null, false, req.flash("loginMessage", "Error : Password Is incorrect "));
+            // return user but user is correct all
+            return done(null, preuser);
           });
         });
     }));
