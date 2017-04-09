@@ -8,10 +8,22 @@ var cookieParser = require("cookie-parser");
 var session = require("express-session");
 var config = require("./config/database.js"); // khai bao databse
 var app = express();
+var multer = require("multer");
+
+
+// setup multer Avartar
+var storage = multer.diskStorage({
+	destination:function(req, file, cb){
+		cb(null, "./public/avatar");
+	},
+	filename: function(req, file, cb) {
+		cb(null, file.originalname);
+	}
+});
+var upload = multer({storage:storage});
 
 // connect mongodb
 mongoose.connect(config.url);
-
 
 
 
@@ -63,21 +75,22 @@ function isLoggedLong(req, res, next) {
 
 
 
+
 // Home Page
 app.get("/", function (req, res) {
-  res.render("Home");
+  res.render("Home",{user : req.user });
 });
 
 // About Page
 app.get("/About", function (req, res) {
-  res.render("About");
+  res.render("About", {user : req.user });
 });
 
 
 
 // Blogs Page
 app.get("/Blogs", function (req, res) {
-  res.render("Blog");
+  res.render("Blog", { user : req.user });
 });
 
 
@@ -87,7 +100,7 @@ app.get("/Blogs", function (req, res) {
 
 // Albums Page
 app.get("/Albums", function (req, res) {
-  res.render("Albums");
+  res.render("Albums", { user : req.user });
 });
   // Sub-Album (chua the xu ly duoc de sau vay)
   app.get("/Albums/:id" , function (req, res) {
@@ -100,20 +113,24 @@ app.get("/Albums", function (req, res) {
 
 // Register Page
 app.get("/register", function (req, res) {
-  //res.render("RegisterPage");
+  //res.render("RegisterPage")
+  console.log(req);
   res.render('RegisterPage', { message: req.flash('signupMessage') });
 });
-app.post("/register", passport.authenticate("register", {
-  successRedirect : '/profile', // chuyen huong qua trang home hay trang profile
-  failureRedirect : '/register', // that bai khi dang ky thi se chuyen ve trang dang ky
-  failureFlash : true // allow flash messages
+app.post("/register", upload.single("picAvartar"), passport.authenticate("register", {
+    successRedirect : '/profile', // chuyen huong qua trang home hay trang profile
+    failureRedirect : '/register', // that bai khi dang ky thi se chuyen ve trang dang ky
+    failureFlash : true // allow flash messages
 }));
+
+
+
 
 // login page
 app.get("/login", isLoggedLong, function (req, res) {
   res.render("register", { loginmessage: req.flash('loginMessage') });
 });
-app.post("/login", passport.authenticate("login",{
+app.post("/login",  passport.authenticate("login",{
     successRedirect: "/profile",
     failureRedirect: "/login",
     failureFlash: true

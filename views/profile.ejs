@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>HOME</title>
+      <title>Profile</title>
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <meta name=”viewport” content=”width=device-width, initial-scale=1″>
       <link rel="stylesheet" type="text/css" href="css/supportSelect.css">
@@ -40,16 +40,27 @@
                      <!-- Link to Pages -->
                      <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
+                        <%  if( user ) { %>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <img src="<%= user.local.avatar %>" alt="..." class="img-circle"> <%= user.local.username %>
+                            <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                               <li><a href="#">Profile</a></li>
+                               <li><a href="#">New Submit</a></li>
+                               <li role="separator" class="divider"></li>
+                               <li><a href="http://localhost:8080/logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Log Out</a></li>
+                            </ul>
+
+                        <%  } else { %>
                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Your Account
                            <span class="caret"></span>
                            </a>
                            <ul class="dropdown-menu">
-                              <li><a href="#">Action</a></li>
-                              <li><a href="#">Another action</a></li>
-                              <li><a href="#">Something else here</a></li>
-                              <li role="separator" class="divider"></li>
-                              <li><a href="#">Separated link</a></li>
+                             <li><a href="#">Login</a></li>
+                             <li><a href="#">Signup</a></li>
                            </ul>
+                        <%   } %>
                         </li>
                      </ul>
                   </div>
@@ -79,8 +90,9 @@
                 <strong>password</strong>: <%= user.local.password %><br>
                 <strong>email</strong>: <%= user.local.email %><br>
                 <strong>Avatar</strong><br>
-
-                 <img src= "<%= user.local.avatar %>" alt="">
+                <div class="form-group">
+                 <img src= "<%= user.local.avatar %>" class="form-control" style="height:50%;">
+               </div>
               </div>
              </div>
            </div>

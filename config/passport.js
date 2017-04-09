@@ -5,6 +5,7 @@ var LocalStrategy = require("passport-local").Strategy;
 // include User setup : noi chung la khai 1 bien User
 var user = require("../app/models/user.js");
 
+
 module.exports = function (passport) {
 
 
@@ -42,10 +43,11 @@ module.exports = function (passport) {
                 nUser.local.username = username;
                 nUser.local.password = nUser.generateHash(password);
                 nUser.local.email = req.body.email;
-                nUser.local.avatar = req.body.picAvartar;
+                var stringle = req.file.path.split("public");
+                var stringPublic = "." + stringle[1];
+                nUser.local.avatar = stringPublic;
 
-
-                // save user
+                // save userapp.use(multer({dest:'./uploads/'}).single('picAvartar'));
                 nUser.save(function (err) {
                     if(err)
                       throw err;
