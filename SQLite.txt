@@ -1,0 +1,77 @@
+https://www.originlab.com/doc/OriginC/guide/Accessing-SQLite-Database
+SQLite: được thiết kế để chủ yếu dùng để lưu trữ Local Data (Định nghãi global & local data)
+Được quản lý bởi 1 file dur nhất 
+
+Mysql
+
+Postgres : 
+
+
+Sự khác biệt của 
+SQLite với 2 cái trên Mysql and Postgres 
+Library bạn sử dụng sẽ nằm tĩnh hoặc mặc định trong file hoặc là 
+trong cái đường link mà bạn cung cấp trong cái application của bạn
+bạn không cần xét lại ip address in computer run thay vào đó chỉ chạy thôi
+con MYSQL postgres bạn phải xét IP address when you run in networks
+
+nó làm được như thế vì nó có thể viết trực tiếp 1 phần IP address run 
+tới 1 file (điều này chứng tỏ nó chỉ cần 1 file để thực thi và nó
+chỉ chiếm dung lượng 1 file trên disk)
+=> dung lượng setup kém 
+
+Giờ thử đặt vấn đề khi bạn cài Mysql 
+bạn có nhớ không ? lúc cài Mysql tôi phải lion tục cài rất nhiều gói
+và các gói phần mềm khác ko chỉ riêng mysql 
+làm sao các bạn có thể cho người dùng nó 1 mội trường lý tưởng
+như vậy khi bạn lập trình ? bạn có thể làm dc bằng các setup tất cả
+nhưng mà bạn phải nhớ các gói bạn đã cài từ trước đó vào 
+điều này gây ra sự bất lợi (có khi còn ko biết folder nó nằm đâu)
+con với SQLite thì chỉ cần 1 ‘specific file’ không cần config database 
+nhiệm vụ của bạn chỉ là run and run and run
+
+Giờ quay trở lại với Postgres về việc config 
+đối với Postgres bạn phải install và postgres chỉ install đủ các
+thứ bạn cần thì bạn phải open file config lên và điều chỉnh và tinh chỉnh 
+nó 
+Add user 
+không cần phải recovery lại database trong trường hợp database bị crash 
+và hỏng the database sẽ tự động roll back lại transaction trước đó
+
+Với hệ thống Autiomation C Code Cross-platform định dạng tập tin ‘nền tảng chéo’
+Theo như chúng tôi hiểu ở đây là việc khi database có sự nâng cấp về file bản
+thì các file thực thi sẽ tự động cập bên Database Upgrade theo phiên bản mới
+Thử hỏi nếu là Postgres 8.6 —> 8.7 bản phải làm gì 
+Yes! bạn phải đỗ toàn bộ dữ liệu từ 8.6 ra và bạn phải cài thêm 1 server với
+đúng với phi bản 8.7 sau đó lại phải re-import chúng vào new server 
+Và nếu phiên bản 8.7 bị thay đổi cách định dạng file import vào thì bạn sẽ làm gì 
+SQLite thì ko như thế 
+Định dạng của SQLite đã được làm cho ổn định 
+
+
+Vấn đề public domain (deploy)
+yeah ! bạn ko cần phải trả bất cứ 1 phí gì cho nó mà chỉ cần sử dụng 
+bạn sẽ được sử dụng miễn phí nó cho mọi thú bạn muốn trên website 
+
+Với SQLite như đã nói ở trên ví dụ nếu file database của bạn nằm ở dưới 
+disk file và bạn chưa import (luôn luôn có những trường hợp bạn muốn 
+chạy data ở dưới file bạn muốn ==> nhưng không được ) với SQLite 
+thì hoàn toàn khác nó là 1 sự khác biệt nó lưu tất cả dữ liệu dưới disk file 
+và khi bạn muốn sử dụng thì bạn chỉ cần sửa và Done ! chứ không cần 
+phải qua các bước rườm ra để đọc và để báo “Disable Connect to you database” 
+==> Rất tốt cho máy tính khi người dùng cứ liên tục gửi request 
+và có thể dẫn đến crash thì với SQLIte mọi thứ đều ở Disk file 
+
+1 vấn đề khác với lưu lượng người sử dụng và truy cập đến trang web của bạn
+như bạn biết khi bạn lập trình web thì việc delay ra là 1 điều quan trọng 
+nhưng đâu phải host nao cũng miễn phí và chỉ miễn phí ở 1 số lượng nhất định
+với số lượng lưu lượng cao như thế thì bạn sẽ phải trả tiền cho mỗi lưu lượng
+khách hàng tới và kết nối tới database tốn hàng tá chục tiền nghĩ đến thôi
+mà đã thấy oải 
+
+mốt vấn đề để minh chứng cho sự hiệu quả của SQLite thì Microsoft đã quyết định
+đưa SQLite vào để xây dựng hệ thống trên windows 10 (năm 2015) 
+được sữ dụng như là 1 “Core component“  trên hệ thống Windows 10 
+có nghĩa là Microsoft cũng đã đưa SQLite vô và sở dụng để tạo nên 1 bước đột phá trong việc lưu trự và đọc dữ liệu local data 
+Như cũng đã nói ở trên “SQLite dc thiết kế mạnh để lưu trự local data”
+https://docs.microsoft.com/en-us/windows/uwp/data-access/sqlite-databases
+https://www.youtube.com/watch?v=Jib2AmRb_rk&feature=youtu.be&t=1693
