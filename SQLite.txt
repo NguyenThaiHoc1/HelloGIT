@@ -75,3 +75,4 @@ có nghĩa là Microsoft cũng đã đưa SQLite vô và sở dụng để tạo
 Như cũng đã nói ở trên “SQLite dc thiết kế mạnh để lưu trự local data”
 https://docs.microsoft.com/en-us/windows/uwp/data-access/sqlite-databases
 https://www.youtube.com/watch?v=Jib2AmRb_rk&feature=youtu.be&t=1693
+https://stackoverflow.com/questions/4813890/sqlite-or-mysql-how-to-decide
