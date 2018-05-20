@@ -1,0 +1,538 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'components/head.html' %}
+<link rel="stylesheet" type="text/css"
+href="{% static 'css/video.css' %}">
+<body>
+    <!-- Start Page Loading -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <!-- End Page Loading -->
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+    <!-- START HEADER -->
+    {% include 'components/header.html' %}
+    <!-- END HEADER -->
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+    <!-- START MAIN -->
+    <div id="main">
+        <!-- START WRAPPER -->
+        <div class="wrapper">
+            <!-- START LEFT SIDEBAR NAV-->
+            {% include 'components/sidebar.html' %}
+            <!-- END LEFT SIDEBAR NAV-->
+            <!-- //////////////////////////////////////////////////////////////////////////// -->
+            <!-- START CONTENT -->
+            <section id="content">
+                <br/>
+
+                <!-- <div class="row" style="padding: 15px;">
+                    <div class="card">
+                        <div class="col s12 l6">
+                            <div class="row" style="margin-top: 8px;">Lưu lượng tổng
+                                <a class="waves-effect waves-light btn-flat disabled">Thấp</a>
+                                <a class="waves-effect waves-light btn-flat blue" style="color: #fff; padding: 1.5px;">Bình thường</a>
+                                <a class="waves-effect waves-light btn-flat disabled">cao</a>
+                            </div>
+                        </div>
+                        <div class="col s12 l6">
+                            <h6>
+                                Khách vào cửa hàng: <strong style="color:red" ><span id='count_in'>0</span> người</strong>
+                            </h6>
+                            <h6>
+                                Khách ra cửa hàng: <strong style="color:blue"><span id='count_out'> 0 </span> người</strong>
+                            </h6>
+                        </div>
+                    </div>
+                </div> -->
+
+
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="header-unit">
+                            <div id="video-container">
+                                <video class="fillWidth" autoplay loop>
+                                    <source src="{% static 'video/demo7.ogg' %}" type="video/ogg" />
+                                </video>
+                            </div>
+                            <!-- end video-container -->
+                        </div>
+
+
+                        <div class="row" >
+                            <div class="card">
+                                <div class="col s12">
+                                    <div class="row" style="margin-top: 8px; font-family: cursive;"> 
+                                        <div class="col s12 l12">
+                                            <b>Khu vực 1</b>
+                                            <a class="waves-effect waves-light btn-flat disabled" style="margin-right:0.5px; margin-left:0.5px;">Thấp</a>
+                                            <a class="waves-effect waves-light btn-flat blue" style="
+                                                color: white;
+                                                font-weight: bold;
+                                                padding: 1px 5px;">Bình thường</a>
+                                            <a class="waves-effect waves-light btn-flat disabled">Cao</a>
+                                        </div>
+                                        <div class="col s12 l12" style="margin-top: 10px;">
+                                            
+
+
+
+                                                
+                                            <a class="waves-effect waves-light btn modal-trigger" href="#modal3" style="margin-top: 15px;">Detail</a>
+
+                                            <!-- Modal -->
+                                            <div id="modal3" class="modal">
+                                                <div class="modal-content">
+                                                    <div class="header-unit">
+                                                        <div id="video-container">
+                                                            <video class="fillWidth" autoplay loop>
+                                                                <source src="{% static 'video/demo7.ogg' %}" type="video/ogg" />
+                                                            </video>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                    <div class="body-unit">
+                                                        <hr>
+                                                        <div class="row">
+                                                            <div class="col s12 l6">
+                                                                <h6> <span style="font-weight: bold;">Ngày:</span> 2017-10-18 </h6>
+                                                            </div>
+                                                            <div class="col s12 l6">
+                                                                <h6 > <span style="font-weight: bold;">Khu vực: </span> CAM-01 </h6>
+                                                            </div>
+                                                            <div class="col s12 l12">
+                                                                <h6>
+                                                                    <span style="font-weight: bold;">Thông tin lưu lượng</span>
+                                                                </h6>
+                                                                <div class="col s6 l6">
+                                                                     <h6>
+                                                                        Khách vào cửa hàng: <strong style="color:red" ><span id='count_in' style="font-size: 30px;">0</span> người</strong>
+                                                                    </h6>
+                                                                </div>
+                                                                <div class="col s6 l6">
+                                                                    
+                                                                    <h6>
+                                                                    Khách ra cửa hàng: <strong style="color:blue"><span id='count_out' style="font-size: 30px;"> 0 </span> người</strong>
+                                                                    </h6>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end .header-unit -->
+                    </div>
+
+
+                    <div class="col s12 m6">
+                        <div class="header-unit">
+                            <div id="video-container">
+                                <video autoplay loop class="fillWidth">
+                                    <source src="{% static 'video/demo8.ogg' %}" type="video/ogg" />
+                                </video>
+                            </div>
+                            <!-- end video-container -->
+                        </div>
+                        <div class="row" >
+                            <div class="card">
+                                <div class="col s12">
+                                    <div class="row" style="margin-top: 8px; font-family: cursive;"> 
+                                        <div class="col s12 l12">
+                                            <b>Khu vực 2</b>
+                                            <a class="waves-effect waves-light btn-flat disable" style="margin-right:0.5px; margin-left:0.5px;">Thấp</a>
+                                            <a class="waves-effect waves-light btn-flat disabled " style="padding: 1px;">Bình thường</a>
+                                            <a class="waves-effect waves-light btn-flat red" style="
+                                            color: white;
+                                            ">Cao</a>
+                                        </div>
+
+                                        <div class="col s12 l12" style="margin-top: 10px;">
+                                            
+                                            <a class="waves-effect waves-light btn modal-trigger" href="#modal1" style="margin-top: 15px;">Detail</a>
+
+
+                                             <!-- Modal -->
+                                            <div id="modal1" class="modal">
+                                                <div class="modal-content">
+                                                    <div class="header-unit">
+                                                        <div id="video-container">
+                                                            <video class="fillWidth" autoplay loop>
+                                                                <source src="{% static 'video/demo8.ogg' %}" type="video/ogg" />
+                                                            </video>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                    <div class="body-unit">
+                                                        <hr>
+                                                        <div class="row">
+                                                            <div class="col s12 l6">
+                                                                <h6> <span style="font-weight: bold;">Ngày:</span> 2017-10-18 </h6>
+                                                            </div>
+                                                            <div class="col s12 l6">
+                                                                <h6> <span style="font-weight: bold;">Khu vực: </span> CAM-08</h6>
+                                                            </div>
+                                                            <div class="col s12 l12">
+                                                                <h6>
+                                                                    <span style="font-weight: bold;">Thông tin lưu lượng</span>
+                                                                </h6>
+                                                                <div class="col s12 l12">
+                                                                     <h6>
+                                                                        Khách hàng trong khu vực: <strong style="color:red;" ><span id='count_in1' style="font-size: 30px;">0</span> Người</strong>
+                                                                    </h6>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end .header-unit -->
+                    </div>
+
+
+
+                </div>
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="header-unit">
+                            <div id="video-container">
+                                <video autoplay loop class="fillWidth">
+                                    <source src="{% static 'video/demo1.ogg' %}" type="video/ogg" />
+                                </video>
+                            </div>
+                            <!-- end video-container -->
+                        </div>
+                        <div class="row">
+                            <div class="card">
+                                <div class="col s12">
+                                    <div class="row" style="margin-top: 8px; font-family: cursive;"> 
+                                        <div class="col s12 l12">
+                                            <b>Khu vực 3 </b>
+                                            <a class="waves-effect waves-light btn-flat green" style="margin-right:0.5px; margin-left:0.5px; color: white;">Thấp</a>
+                                            <a class="waves-effect waves-light btn-flat disabled" style="padding: 1px;">Bình thường</a>
+                                            <a class="waves-effect waves-light btn-flat disabled">Cao</a>
+                                        </div>
+                                        <div class="col s12 l12">
+                                            
+
+
+
+                                            <a class="waves-effect waves-light btn modal-trigger" href="#modal4" style="margin-top: 15px;">Detail</a>
+
+                                            <!-- Modal -->
+                                            <div id="modal4" class="modal">
+                                                <div class="modal-content">
+                                                    <div class="header-unit">
+                                                        <div id="video-container">
+                                                            <video class="fillWidth" autoplay loop>
+                                                                <source src="{% static 'video/demo1.ogg' %}" type="video/ogg" />
+                                                            </video>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                    <div class="body-unit">
+                                                        <hr>
+                                                        <div class="row">
+                                                            <div class="col s12 l6">
+                                                                <h6> <span style="font-weight: bold;">Ngày:</span> 2017-10-18 </h6>
+                                                            </div>
+                                                            <div class="col s12 l6">
+                                                                <h6 > <span style="font-weight: bold;">Khu vực: </span> CAM-03 </h6>
+                                                            </div>
+                                                            <div class="col s12 l12">
+                                                                <h6>
+                                                                    <span style="font-weight: bold;">Thông tin lưu lượng</span>
+                                                                </h6>
+                                                                <div class="col s12 l12">
+                                                                     <h6>
+                                                                        Khách hàng trong khu vực: <strong style="color:green;" ><span id='count_in2' style="font-size: 30px;">0</span> Người</strong>
+                                                                    </h6>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end .header-unit -->
+                    </div>
+                    <div class="col s12 m6">
+                        <div class="header-unit">
+                            <div id="video-container4">
+                                <video autoplay loop class="fillWidth">
+                                    <source src="{% static 'video/F.ogg' %}" type="video/ogg" />
+                                </video>
+                            </div>
+
+                            <!-- end video-container -->
+                        </div>
+                        <div class="row">
+                            <div class="card">
+                                <div class="col s12">
+                                    <div class="row" style="margin-top: 8px; font-family: cursive;">
+                                        <div class="col s12 l12">
+                                            <b>Khu vực 4 </b>
+                                            <a class="waves-effect waves-light btn-flat disable" style="margin-right:0.5px; margin-left:0.5px;">Thấp</a>
+                                            <a class="waves-effect waves-light btn-flat blue" style="padding: 1px; color: white;">Bình thường</a>
+                                            <a class="waves-effect waves-light btn-flat disabled">Cao</a>
+
+                                        </div>
+                                        <div class="col s12 l12"> 
+                                            
+
+
+                                            <a class="waves-effect waves-light btn modal-trigger" href="#modal5" style="margin-top: 15px;">Detail</a>
+
+                                            <!-- Modal -->
+                                            <div id="modal5" class="modal">
+                                                <div class="modal-content">
+                                                    <div class="header-unit">
+                                                        <div id="video-container">
+                                                            <video class="fillWidth" autoplay loop>
+                                                                <source src="{% static 'video/F.ogg' %}" type="video/ogg" />
+                                                            </video>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                    <div class="body-unit">
+                                                        <hr>
+                                                        <div class="row">
+                                                            <div class="col s12 l6">
+                                                                <h6> <span style="font-weight: bold;">Ngày:</span> 2017-10-18 </h6>
+                                                            </div>
+                                                            <div class="col s12 l6">
+                                                                <h6 > <span style="font-weight: bold;">Khu vực: </span> CAM-08 </h6>
+                                                            </div>
+                                                            <div class="col s12 l12">
+                                                                <h6>
+                                                                    <span style="font-weight: bold;">Thông tin lưu lượng</span>
+                                                                </h6>
+                                                                <div class="col s12 l12">
+                                                                     <h6>
+                                                                        <h6>
+                                                                            Khách hàng trong khu vực: <strong style="color:blue;" ><span id='count_in3' style="font-size: 30px;">0</span> Người</strong>
+                                                                        </h6>
+                                                                    </h6>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end .header-unit -->
+                        <!-- Modal Structure -->
+                        <!-- <div id="modal1" class="modal modal-fixed-footer">
+                            <div class="modal-content">
+                                <div class="header-unit">
+                                    <div id="video-container">
+                                        <video autoplay loop class="fillWidth">
+                                            <source src="{% static 'video/F.ogg' %}" type="video/ogg" />
+                                        </video>
+                                    </div>
+                                    end video-container
+                                </div>
+                                end .header-unit
+                                <div class="card-panel">f
+                                    <span class="blue-text text-darken-2">Infomation</span>
+                                    <br/>
+                                    <span class="blue-text text-darken-2">Number of people: </span>
+                                    <br/>
+                                    <span class="blue-text text-darken-2">Recognite:</span>
+                                    <br/>
+                                    <span class="blue-text text-darken-2">OK!</span>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <!--start container-->
+                <!--end container-->
+                <!-- Modal Trigger -->
+            </section>
+            <!-- END CONTENT -->
+        </div>
+        <!-- END WRAPPER -->
+    </div>
+    
+    
+    {% include 'components/jsinclude.html' %}
+    <script type="text/javascript">
+
+        // camera 1
+        cout = function(arr, i)
+        {
+            $('#count_in').text(arr[i].in);
+            $('#count_out').text(arr[i].out);
+            window.setTimeout(cout, arr[i].time, arr, i + 1);
+        }
+
+
+        // camera 2
+        cout1 = function(arr, i)
+        {
+            $('#count_in1').text(arr[i].in);
+            window.setTimeout(cout1, arr[i].time, arr, i + 1);
+        }
+
+        // camera 3
+
+        cout2 = function(arr, i)
+        {
+            $('#count_in2').text(arr[i].in);
+            window.setTimeout(cout2, arr[i].time, arr, i + 1);
+        }
+
+
+        // camera 4
+
+        cout3 = function(arr, i)
+        {
+            $('#count_in3').text(arr[i].in);
+            window.setTimeout(cout3, arr[i].time, arr, i + 1);
+        }
+
+
+        // xu ly camera 1
+        camera1 =  function readTextFile()
+        {
+
+            var rawFile = new XMLHttpRequest();
+            rawFile.open("GET", "{% static 'video/time4.txt' %}", false);
+            rawFile.onreadystatechange = function ()
+            {
+                if(rawFile.readyState === 4)
+                {
+                    if(rawFile.status === 200 || rawFile.status == 0)
+                    {
+                        var allText = rawFile.responseText;
+                        var arr = JSON.parse(allText);
+                        cout(arr, 0)
+                    }
+                }
+            }
+            rawFile.send(null);
+        }();
+
+
+        // xu ly camera 2
+        camera2 =  function readTextFile()
+        {
+
+            var rawFile = new XMLHttpRequest();
+            rawFile.open("GET", "{% static 'video/time1.txt' %}", false);
+            rawFile.onreadystatechange = function ()
+            {
+                if(rawFile.readyState === 4)
+                {
+                    if(rawFile.status === 200 || rawFile.status == 0)
+                    {
+                        var allText = rawFile.responseText;
+                        var arr = JSON.parse(allText);
+                        cout1(arr, 0)
+                    }
+                }
+            }
+            rawFile.send(null);
+        }();
+
+        // xu ly camera 3
+
+        camera3 =  function readTextFile()
+        {
+
+            var rawFile = new XMLHttpRequest();
+            rawFile.open("GET", "{% static 'video/time2.txt' %}", false);
+            rawFile.onreadystatechange = function ()
+            {
+                if(rawFile.readyState === 4)
+                {
+                    if(rawFile.status === 200 || rawFile.status == 0)
+                    {
+                        var allText = rawFile.responseText;
+                        var arr = JSON.parse(allText);
+                        cout2(arr, 0)
+                    }
+                }
+            }
+            rawFile.send(null);
+        }();
+
+        // xu ly camera 4
+
+        camera4 =  function readTextFile()
+        {
+
+            var rawFile = new XMLHttpRequest();
+            rawFile.open("GET", "{% static 'video/time3.txt' %}", false);
+            rawFile.onreadystatechange = function ()
+            {
+                if(rawFile.readyState === 4)
+                {
+                    if(rawFile.status === 200 || rawFile.status == 0)
+                    {
+                        var allText = rawFile.responseText;
+                        var arr = JSON.parse(allText);
+                        cout3(arr, 0)
+                    }
+                }
+            }
+            rawFile.send(null);
+        }();
+
+
+    
+    </script> 
+</body>
+</html>
