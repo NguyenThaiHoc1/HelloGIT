@@ -1,0 +1,56 @@
+Iris
+
+Như cũng đã trình bày cấu trúc hoạt động bên trên. Ngoài ra việc nhận diện bằng Iris Scan đòi hỏi chúng ta phải cung cấp chính xác cấu trúc mắt của một người vì thế việc lựa chọn các công cụ để hỗ trợ cho việc lấy hình ảnh một cách hiệu quả nhất cũng là một điều khó khăn. Chính vì thế việc tạo ra một công cụ hỗ trợ cho việc nhận diện móng mắt (Iris scan) cũng tương đối nhọc nhắn ở đây chúng tôi có tìm hiểu ở một số bài báo về việc nhận diện móng mắt và phát hiện ra rằng cấu trúc của một camera hỗ trợ cho việc nhận diện móng mắt quả, thiết bị được cấu tạo bởi 2 thành phần chính 
+* IR led: đó là một chiếc đèn hồng ngoại, đèn IR led cho phép các ánh sáng hồng ngoại tập trung vào 1 chỗ để có thể lấy ra cấu trúc tượng trưng của mắt bạn cụ thể là Iris. Đây cũng chính là bộ phận quan trọng trong quy trinh nhận diện mống mắt. Do nếu ‘Không có IR led’ thì chúng ta không thể lấy được cấu trúc cũa mắt 1 cách cụ thể do bị các ảnh hưởng từ bên ngoài nên hồng ngoại không thể tập trung vào vùng cần xử lý   
+* Iris Camera: Camera hồng ngoại đặc biệt giúp tinh chỉnh độ sắc nét để chụp ảnh mống mắt  
+ =>
+Quy trình lấy hình ảnh móng mắt rất đơn giản, đèn IR Led sẽ chiếu sáng mắt của bạn và từ đó Iris camera sẽ tập trung vào vùng hồng ngoại hội tụ và sẽ lấy ra ảnh Iris của bạn và lưu trữ đặc trưng Iris của bạn để có thể đem vào xử lý  
+ 
+II. Iris recognition system  
+
+Hiện tại có rất nhiều phương pháp để làm nên một hệ thống nhận diện mống mắt ở đây chúng tôi sẽ chia làm 2 phương pháp chính:
+
+* Phương pháp có sẵn  
+       Trên thị trường hiện tại có rất nhiều các Iris camera hỗ trợ ngay trên hệ thống của họ ví dụ như:
+https://www.amazon.com/Digital-Outdoor-Security-Camera-Vision/dp/B01MQ62IVI/ref=sr_1_3?s=electronics&ie=UTF8&qid=1532230997&sr=1-3&keywords=iris+camera  (1)
+trị giá 200$ và được điều khiển thông qua hệ thống Smartphone và talet có tên là Iris smart Hub nhưng nó chỉ dừng lại ở chỗ là nhận diễn móng mắt trong đêm chứ không được sử 
+dụng để làm nhận diện mống mắt 
+
+Ngoài ra chúng tôi còn tìm được 1 loại camera đó là dùng để login cho PC đã được tích hợp sẵn 
+https://www.amazon.com/IdentaMaster-Biometric-Security-IriShield-Encryption/dp/B07BSVJPMK (2)
+nó có giá khá đắt là tầm 480$ nếu chúng ta mua cái bộ trên là bộ đã có cài đặt sẵn chúng ta chỉ có thể mua về và sử dụng nó có giá tầm $529.99 được công thêm $5 tiền shipping tại amazon. Nhưng nếu chúng ta muốn 1 camera dùng để  lập trình để sử dụng họ cũng có bán cho chúng ta một camera tách từ bộ sản phầm của họ là 
+http://www.fulcrumbiometrics.com/IriShield-USB-BK-2121U-p/102152.htm (3)
+với giá là $480.00 như vậy từ đây chúng ta có thể thấy rằng việc chuẩn bị một camera để có sử dụng cho việc nhận diện móng mắt rất phức tạp và tốn kém
+
+
+* Phương pháp thủ công:  Như đã trình bày ở trên việc mua lại các hệ thống nhận diện mống mắt (Iris) thì nó quả thật quá đắt đỏ nên vì thế cũng có một số bài viết mà chúng tôi nghiên cứu họ có thể tạo nên một camera nhận diện mống mắt. Ở đây chúng tôi cũng trình bày các bước để làm nên một chiếc camera dùng để nhận diện mống mắt. 
+
+	Như đã đề cập ở trên chúng ta sẽ có 2 bộ phận chính cần trang bị cho camera 
+	
+	Step 1:  chúng ta sẽ sử dụng một camera mà chúng ta mua bất kỳ 
+
+
+	Step 2: Tháo IR filter (IR filter là kính lọc màu của các camera bây giờ thường sử dụng)
+
+	Step 3: Chúng ta sẽ thêm IR Leds (như đã đề cập ở trên về IR led) 
+		
+		Sử dụng 1 hoặc 2 nếu muốn rõ nét hơn về Iris 
+
+	Step 4: Khóa tầm nhìn của mắt 
+	
+		Được sử dụng để hạn chế tầm nhìn của mắt mang lại hiệu quả rút trích iris của mắt dễ hơn và điều này giúp cho mắt trong quá trình lấy cấu trúc không bị ảnh hưởng bởi độ song bên 		ngoài
+ 
+	Step 5: Lập trình và thử nghiệm (bước này cần rất nhiều thời gian để nghiên cứu các kỹ thuật làm)
+        	
+	các bước trên chúng tôi tham khảo ở địa chỉ sau: https://www.instructables.com/id/Iris-recognition-on-Zybo/
+	
+      Qua các bước chúng tôi nêu trên thì cần rất nhiều công đoạn để có thể làm ra một chiếc camera nhận diện và cần đòi hỏi kỹ thuật về phần cứng rất nhiều. Nhưng hiện tại chúng tôi lại thiếu
+      nguồn nhân lực về việc làm phần cứng nên chúng tôi chưa chắc chúng tôi có thể làm được hay không. Ở đây chúng tôi nêu ra cho quý công ty các bước làm và các bước chuẩn bị để 
+      có thể nằm thêm thông tin về việc nghiên cứu mới này 
+
+
+
+Kết luận: Việc thực hiện 1 hệ thống nhận diện mống mắt là một việc làm mất tương đối nhiều thời gian trong khâu chuẩn bị và kỹ thuật. Chúng tôi cũng có thể thử tìm hiểu một số kỹ thuật trên các trang công nghệ nhưng theo chúng tôi chỉ dùng ở mức là dùng để thử nghiệm chứ không thể đưa ra triển khai do chưa có bất cứ sự xác minh vào về độ chính xác cũng như tính bảo mật của các kỹ thuật này về SDK chúng tôi có tìm được 1 SDK khá thú vị có tên là  ‘VERIEYE’ do hãng công nghê Neuron technology cung cấp có rất nhiều SDK được cung cấp kỹ thuật của họ được chứng nhận bởi rất nhiều giải thưởng liên quan về công nghệ  (Thông tin giải thưởng của họ: ‘http://www.neurotechnology.com/verieye-awards.html'). Với mức độ công việc mà chúng tôi đã nou trên chúng tôi nghĩ có thể sẽ mất khoảng 6 - 7 tháng để có thể phát triển từ việc tìm hiểu công nghệ - cho đến kỹ thuật áp dụng.
+ 
+
+
