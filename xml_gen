@@ -1,0 +1,39 @@
+def generate_xml(img_index_str, list_box, output_lbl, h, w):
+    obj_xml = '''
+    <object>
+        <name>{}</name>
+        <bndbox>
+            <xmin>{}</xmin>
+            <ymin>{}</ymin>
+            <xmax>{}</xmax>
+            <ymax>{}</ymax>
+        </bndbox>
+    </object>\
+    '''
+
+    ann_xml = '''\
+<annotation>
+    <filename>{}</filename>
+    <size>
+        <width>{}</width>
+        <height>{}</height>
+        <depth>3</depth>
+    </size>{}
+</annotation>\
+    '''
+
+    xml = ''
+
+    for item in list_box:
+        true_label = item[4]
+        xmin = item[0]
+        ymin = item[1]
+        xmax = item[0] + item[3]
+        ymax = item[1] + item[2]
+        imgname = img_index_str + ".png"
+        xmlname = img_index_str + ".xml"
+        xml += obj_xml.format(true_label, xmin, ymin, xmax, ymax)
+
+    xml = ann_xml.format(imgname, w, h, xml)
+    with open(output_lbl + xmlname, 'w') as file:
+        file.write(xml)
